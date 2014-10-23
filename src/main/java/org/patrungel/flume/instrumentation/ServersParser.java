@@ -46,7 +46,7 @@ public class ServersParser {
         List<InetSocketAddress> servers = new ArrayList<InetSocketAddress>();
 
         for (String hostColonPort : serversString.split("[ ,;]+")) {
-            String[] hostAndPort = hostColonPort.split(":", 1);
+            String[] hostAndPort = hostColonPort.split(":", 2);
             if (hostAndPort.length != 2) {
                 throw new ServersParserException(String.format(
                         "Invalid graphite server %1$s . Expected format is \"hostname:port\".",
